@@ -2,6 +2,7 @@ package Management;
 
 import Services.Registration;
 
+import java.awt.*;
 import java.util.Scanner;
 
 public class MenuSelectors {
@@ -19,9 +20,11 @@ public class MenuSelectors {
                 break;
             case 1:
                 registration.registration(role_user);
+                Menus.showUserMenu();
                 break;
             case 2:
                 registration.registration(role_admin);
+                Menus.showAdminMenu();
                 break;
             default:
                 //There is no such an option !!!

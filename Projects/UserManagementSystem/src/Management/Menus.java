@@ -2,6 +2,7 @@ package Management;
 
 public class Menus {
     public static void showMainMenu() {
+
         System.out.println("---------------------------\n" +
                 "[0]-->Exit" +
                 "\n[1]-->Registration for user" +
@@ -11,6 +12,8 @@ public class Menus {
     }
 
     public static void showUserMenu() {
+        MenuSelectors menuSelectors = new MenuSelectors();
+
         System.out.println("---------------------------\n" +
                 "[0]-->Exit" +
                 "\n[1]-->Show my datas" +
@@ -18,9 +21,12 @@ public class Menus {
                 "\n[3]-->Log out" +
                 "\nYour option :" +
                 "\n---------------------------\n");
+        menuSelectors.userMenuSelector();
     }
 
     public static void showAdminMenu() {
+        MenuSelectors menuSelectors = new MenuSelectors();
+
         System.out.println("---------------------------\n" +
                 "[0]-->Exit" +
                 "\n[1]-->Show all users" +
@@ -28,5 +34,6 @@ public class Menus {
                 "\n[3]-->Update your datas" +
                 "\nYour option :" +
                 "\n---------------------------\n");
+        menuSelectors.showAdminMenu();
     }
 }
