@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Managment {
+public class Management {
     public static void showMenu() {
         System.out.print(
                 "\n[0]-->Exit" +
