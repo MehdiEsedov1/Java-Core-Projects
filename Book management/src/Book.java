@@ -1,5 +1,7 @@
 public class Book {
+    private String author;
     private String name;
+    private int price;
 
     public String getName() {
         return name;
@@ -24,8 +26,4 @@ public class Book {
     public void setPrice(int price) {
         this.price = price;
     }
-
-    private String author;
-
-    private int price;
 }

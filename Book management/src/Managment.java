@@ -2,39 +2,43 @@ import java.util.Scanner;
 
 public class Managment {
     public static void showMenu() {
-        System.out.println(
+        System.out.print(
                 "\n[0]-->Exit" +
-                        "\n[1]-->Add new book" +
-                        "\n[2]-->Search for a book" +
-                        "\n[3]-->Delete a book" +
-                        "\n[4]-->Show all books" +
-                        "\n[5]-->Update a book");
-
-        System.out.print("\nYour choise : ");
+                "\n[1]-->Add new book" +
+                "\n[2]-->Search for a book" +
+                "\n[3]-->Remove a book" +
+                "\n[4]-->Show all books" +
+                "\n[5]-->Update a book" +
+                "\nYour choise: ");
     }
 
     public static void options() {
+        Operations op = new Operations();
+
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
+
         switch (option) {
             case 0:
                 System.exit(0);
                 break;
             case 1:
-                Operations.addBook();
+                op.addBook();
                 break;
             case 2:
-                Operations.searchBook();
+                op.searchBook();
                 break;
             case 3:
-                Operations.removeBook();
+                op.removeBook();
                 break;
             case 4:
-                Operations.showAllBooks();
+                op.showAllBooks();
                 break;
             case 5:
-                Operations.updateBook();
+                op.updateBook();
                 break;
+            default:
+                System.out.println("Invalid option");
         }
     }
 }

@@ -1,77 +1,75 @@
 import java.util.Scanner;
 
 public class Operations {
-    public static void addBook() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Count of new books : ");
+    Scanner scanner = new Scanner(System.in);
+
+    public void addBook() {
+        System.out.print("\nCount of new books: ");
         int countOfBooks = scanner.nextInt();
 
         for (int i = 0; i < countOfBooks; i++) {
             Book book = new Book();
 
-            System.out.println("Name of book : ");
+            System.out.print("Name of book: ");
             String nameOfBook = scanner.next();
             book.setName(nameOfBook);
 
-            System.out.println("Author of book : ");
+            System.out.print("Author of book: ");
             String authorOfBook = scanner.next();
             book.setAuthor(authorOfBook);
 
-            System.out.println("Price of book : ");
+            System.out.print("Price of book: ");
             int priceOfBook = scanner.nextInt();
             book.setPrice(priceOfBook);
 
-            GlobalValues.books.add(book);
+            BookStorage.books.add(book);
         }
     }
 
-    public static void showAllBooks() {
-        for (int i = 0; i < GlobalValues.books.size(); i++) {
-            System.out.println("\n-----------------\nName of book :" + GlobalValues.books.get(i).getName());
-            System.out.println("Author of book :" + GlobalValues.books.get(i).getAuthor());
-            System.out.println("Price of book : " + GlobalValues.books.get(i).getPrice());
-            System.out.println("ID : " + GlobalValues.books.indexOf(GlobalValues.books.get(i)) + "\n-----------------\n");
+    public void showAllBooks() {
+        for (int i = 0; i < BookStorage.books.size(); i++) {
+            System.out.println("\n-----------------\nName of book: " + BookStorage.books.get(i).getName());
+            System.out.println("Author of book: " + BookStorage.books.get(i).getAuthor());
+            System.out.println("Price of book: " + BookStorage.books.get(i).getPrice());
+            System.out.println("ID: " + BookStorage.books.indexOf(BookStorage.books.get(i)) + "\n-----------------");
         }
     }
 
-    public static void removeBook() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Give a ID : ");
+    public void removeBook() {
+        System.out.println("\nGive a ID: ");
         int idOfBook = scanner.nextInt();
 
-        GlobalValues.books.remove(idOfBook);
+        BookStorage.books.remove(idOfBook);
     }
 
-    public static void searchBook() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Give a ID : ");
+    public void searchBook() {
+        System.out.println("Give a ID: ");
         int idOfBook = scanner.nextInt();
 
-        System.out.println("\n-----------------\nName : " + GlobalValues.books.get(idOfBook).getName());
-        System.out.println("Author : " + GlobalValues.books.get(idOfBook).getName());
-        System.out.println("Price : " + GlobalValues.books.get(idOfBook).getName());
-        System.out.println("ID : " + GlobalValues.books.indexOf(GlobalValues.books.get(idOfBook)) + "\n-----------------\n");
+        System.out.println("\n-----------------\nName : " + BookStorage.books.get(idOfBook).getName());
+        System.out.println("Author : " + BookStorage.books.get(idOfBook).getName());
+        System.out.println("Price : " + BookStorage.books.get(idOfBook).getName());
+        System.out.println("ID : " + BookStorage.books.indexOf(BookStorage.books.get(idOfBook)) + "\n-----------------");
     }
 
-    public static void updateBook() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Give a ID : ");
+    public void updateBook() {
+        System.out.print("\nGive a ID: ");
         int idOfBook = scanner.nextInt();
 
         Book newBook = new Book();
 
-        System.out.println("Name of book : ");
+        System.out.print("Name of book: ");
         String nameOfBook = scanner.next();
         newBook.setName(nameOfBook);
 
-        System.out.println("Author of book : ");
+        System.out.print("Author of book: ");
         String authorOfBook = scanner.next();
         newBook.setAuthor(authorOfBook);
 
-        System.out.println("Price of book : ");
+        System.out.print("Price of book: ");
         int priceOfBook = scanner.nextInt();
         newBook.setPrice(priceOfBook);
 
-        GlobalValues.books.set(idOfBook, newBook);
+        BookStorage.books.set(idOfBook, newBook);
     }
 }
