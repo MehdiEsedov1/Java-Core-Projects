@@ -33,6 +33,4 @@ public class Car {
     public void setID(int id) {
         this.id = id;
     }
-
-    //Test
 }
